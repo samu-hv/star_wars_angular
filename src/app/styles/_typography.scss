@@ -1,0 +1,49 @@
+@import './colors';
+@import './mixins';
+
+.heading-primary {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  width: 100%;
+  text-align: center;
+  @include font-source-sans(5rem, transparent, 600, 3px, 5rem);
+  // background: linear-gradient(
+  //   to right,
+  //   $color-primary,
+  //   $color-secondary,
+  //   $color-tertiary
+  // );
+  background: linear-gradient(
+    to right,
+    $color-tertiary,
+    $color-secondary-light
+  );
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+
+  @include respond(phone) {
+    font-size: 4rem;
+  }
+
+  @include respond(phone-small) {
+    letter-spacing: 2px;
+    font-size: 3.2rem;
+  }
+}
+
+.btn-back {
+  width: 3%;
+  position: absolute;
+  top: 15rem;
+  right: 2rem;
+  cursor: pointer;
+
+  @include respond(phone) {
+    width: 6%;
+    top: 18rem;
+  }
+
+  @include respond(phone-small) {
+    width: 7%;
+  }
+}

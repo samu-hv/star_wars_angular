@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.footer {
+  width: 100%;
+  height: 20rem;
+  background: linear-gradient(#172b41, $color-primary);
+  margin-top: 10rem;
+
+  &__title {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include font-source-sans(3rem, $color-white, 600, 4px, 5rem);
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(phone-small) {
+      font-size: 2rem;
+    }
+  }
+}

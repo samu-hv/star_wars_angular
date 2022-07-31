@@ -1,0 +1,94 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.header {
+  background: linear-gradient(
+    to right,
+    $color-primary,
+    #032741,
+    $color-primary-light
+  );
+  height: 8.5rem;
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    @include respond(phone) {
+      justify-content: center;
+      flex: 0 1 100%;
+    }
+  }
+
+  &-box {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include respond(tab-port) {
+      width: 65%;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 4rem;
+
+    @include respond(tab-port) {
+      gap: 2rem;
+    }
+
+    @include respond(phone) {
+      gap: 0.5rem;
+      justify-content: center;
+      flex: 0 1 100%;
+    }
+
+    &-language {
+      @include font-source-sans(2rem, $color-white, 500, 1px);
+      text-decoration: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      @include respond(phone) {
+        @include font-source-sans(1.8rem, $color-white, 500, 1px);
+      }
+    }
+  }
+}
+
+.logo {
+  width: 11rem;
+  height: 11rem;
+
+  @include respond(phone) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+.language {
+  &__box {
+    cursor: pointer;
+    padding: 0.8rem;
+
+    &:hover {
+      background-color: $color-tertiary;
+    }
+  }
+
+  &__separator {
+    padding: 0rem 0.2rem;
+  }
+}

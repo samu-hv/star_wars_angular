@@ -1,0 +1,25 @@
+<section class="container">
+  <h1 class="heading-primary">{{ planet.name }}</h1>
+  <img
+    class="btn-back"
+    (click)="navigation.goBack()"
+    src="../../../assets/images/back.png"
+    alt="Back"
+  />
+  <div class="column">
+    <div class="btn__statistics"></div>
+    <div class="planet">
+      <div class="summary">
+        <img class="summary__image" [src]="planet.image" alt="" />
+        <div class="summary__details">
+          <div class="summary__details-item">
+            Region --> {{ planet.region }}
+          </div>
+          <div class="summary__details-item">
+            Sector --> {{ planet.sector }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

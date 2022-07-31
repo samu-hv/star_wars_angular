@@ -1,0 +1,17 @@
+<section class="container">
+  <h1 class="heading-primary">{{ 'titles.smugglers' | translate }}</h1>
+  <div class="row">
+    <div
+      class="card__outside"
+      [routerLink]="[smuggler.id, smuggler.name]"
+      *ngFor="let smuggler of smugglers"
+    >
+      <div class="card__middle">
+        <div class="card__inside">
+          <h2 class="card__content-title">{{ smuggler.name }}</h2>
+          <img class="card__content" [src]="smuggler.image" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

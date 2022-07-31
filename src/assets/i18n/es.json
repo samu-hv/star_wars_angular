@@ -1,0 +1,29 @@
+{
+  "titles": {
+    "smugglers": "contrabandistas",
+    "smugglersDetail": "Detalles del contrabandista"
+  },
+  "smugglerDetail": {
+    "specie": "Especie",
+    "human": "Humano",
+    "gender": "Género",
+    "male": "Hombre",
+    "heght": "Altura",
+    "mass": "Peso",
+    "resume": {
+      "hanSolo": "Han Solo nació en el planeta Corellia durante los últimos años de la República Galáctica en algún momento alrededor del 32 ABY. Durante sus años formativos, su padre trabajó en los astilleros de la Corporación de Ingeniería Corelliana, construyendo buques como cargueros ligeros YT-1300 hasta que fue despedido",
+      "chewbacca": "Chewbacca, llamado afectuosamente Chewie por sus amigos, fue un guerrero wookiee, un contrabandista y un luchador de resistencia que peleó en las Guerras Clon, la Guerra Civil Galáctica y el Guerra Fría. Fue criado en el planeta Kashyyyk y se convirtió en un líder militar.",
+      "lando": "Lando Calrissian era un humano que en diferentes momentos de su vida fue un apostador profesional, empresario, contrabandista y general. Natal de Socorro, se convirtió en apostador y estafador en sus primeros años de vida, eventualmente ganando su propia nave, el Halcón Milenario, en un juego de sabacc a un hombre llamado Cix Trouvee"
+    }
+  },
+  "spaceship": {
+    "manufacturer": "Fabricante"
+  },
+  "breadcrumb": {
+    "Smuggler": "Contrabandistas",
+    "Smuggler Details": "Detalles del contrabandistas",
+    "Planet": "Planeta",
+    "Spaceship": "Nave Espacial"
+  }
+  
+}

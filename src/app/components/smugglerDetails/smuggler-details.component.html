@@ -1,0 +1,58 @@
+<div *ngIf="checkRouteUrl()">
+  <section class="container">
+    <h1 class="heading-primary">{{ 'titles.smugglersDetail' | translate }}</h1>
+    <img
+      class="btn-back"
+      (click)="navigation.goBack()"
+      src="../../../assets/images/back.png"
+      alt="Back"
+    />
+    <div class="column">
+      <div class="smuggler">
+        <div class="summary">
+          <img class="summary__image" [src]="smuggler.image" alt="" />
+          <div class="summary__details">
+            <h2 class="summary__details-name">{{ smuggler.name }}</h2>
+            <div class="summary__details-item">
+              {{ 'smugglerDetail.specie' | translate }}:
+              {{ translateSpecie(smuggler.species) | translate }}
+            </div>
+            <div class="summary__details-item">
+              {{ 'smugglerDetail.gender' | translate }}:
+              {{ translateGender(smuggler.gender) | translate }}
+            </div>
+            <div class="summary__details-item">
+              {{ 'smugglerDetail.heght' | translate }}: {{ smuggler.height }}
+            </div>
+            <div class="summary__details-item">
+              {{ 'smugglerDetail.mass' | translate }}: {{ smuggler.mass }}
+            </div>
+            <div class="summary__details-resume">
+              {{ translateResume(smuggler.name) | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div
+            class="info__planet"
+            [routerLink]="['planet', smuggler.planetName]"
+          >
+            <div class="info__planet-name">
+              {{ smuggler.planetName }}
+            </div>
+          </div>
+          <div
+            class="info__spaceship"
+            [routerLink]="['spaceship', smuggler.spaceshipName]"
+          >
+            <div class="info__spaceship-name">
+              {{ smuggler.spaceshipName }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<router-outlet></router-outlet>

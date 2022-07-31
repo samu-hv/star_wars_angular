@@ -1,0 +1,29 @@
+{
+  "titles": {
+    "smugglers": "smugglers",
+    "smugglersDetail": "smugglers datail"
+  },
+  "smugglerDetail": {
+    "specie": "Specie",
+    "human": "Human",
+    "gender": "Gender",
+    "male": "Male",
+    "heght": "Heght",
+    "mass": "Mass",
+    "resume": {
+      "hanSolo": "Han Solo was born on the planet Corellia during the waning years of the Galactic Republic. Sometime after he became famous, it would be rumored by an Snivvian bounty hunter that Han was actually a descendant of the Prince-Admiral Jonashe Solo. During his formative years, his father Ovan worked in the Corellian Engineering Corporation shipyards, building vessels such as YT-1300 light freighters until he was laid off",
+      "chewbacca": "Chewbacca, known affectionately to his friends as Chewie, was a Wookiee male warrior, smuggler, mechanic, pilot, and resistance fighter who fought in the Clone Wars, the Galactic Civil War, the Cold War, and the subsequent First Order-Resistance War. He hailed from the planet Kashyyyk and became a Wookiee military leader.",
+      "lando": "Lando Calrissian was a Human male professional gambler, entrepreneur, smuggler, and general throughout various points in his life. Born on Socorro, he became a gambler and con man early in his life and acquired his own ship, the Millennium Falcon, in a game of sabacc with a man named Cix Trouvee."
+    } 
+  },
+  "spaceship": {
+    "manufacturer": "Manufacturer"
+  },
+  "breadcrumb": {
+    "Smuggler": "Smuggler",
+    "Smuggler Details": "Smuggler Details",
+    "Planet": "Planet",
+    "Spaceship": "Spaceship"
+  }
+  
+}
