@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MainService } from 'src/app/core/services/main.service';
+import Planet from 'src/app/core/models/Planet';
 import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
+import { ApiConnService } from 'src/app/core/services/ApiConnection/api-conn.service';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
@@ -10,11 +11,11 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   styleUrls: ['./planet.component.scss']
 })
 export class PlanetComponent implements OnInit {
-  planet!: any;
+  planet!: Planet;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private mainService: MainService,
+    private apiService: ApiConnService,
     public navigation: NavigationService,
     private breadcrumbService: BreadcrumbService
   ) {}
@@ -27,9 +28,12 @@ export class PlanetComponent implements OnInit {
   getPlanet() {
     this.activatedRoute.paramMap.subscribe((params) => {
       const planetParams: any = params;
-      this.planet = this.mainService.findPlanetByID(
-        planetParams.params.planetName
-      );
+      console.log(params);
+      this.apiService
+        .getPlanetById(planetParams.params.id)
+        .subscribe((planetDetails: Planet) => {
+          this.planet = planetDetails;
+        });
     });
   }
 }

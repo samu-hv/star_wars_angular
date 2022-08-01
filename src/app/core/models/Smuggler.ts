@@ -1,6 +1,4 @@
-import IPlanet from '../interfaces/Planet';
 import ISmuggler from '../interfaces/Smuggler';
-import ISpaceship from '../interfaces/Spaceship';
 
 export default class Smuggler implements ISmuggler {
   id: number;
@@ -10,8 +8,21 @@ export default class Smuggler implements ISmuggler {
   height: number;
   mass: number;
   image: string;
-  spaceshipName: string;
-  planetName: string;
+  spaceship: [
+    {
+      id: number;
+      name: string;
+    }
+  ];
+  planet: {
+    id: number;
+    name: string;
+  };
+  biography: {
+    en: string;
+    es: string;
+  };
+  // data: ISmuggler;
 
   constructor(values: ISmuggler) {
     this.id = values.id;
@@ -21,7 +32,9 @@ export default class Smuggler implements ISmuggler {
     this.height = values.height;
     this.mass = values.mass;
     this.image = values.image;
-    this.spaceshipName = values.spaceshipName;
-    this.planetName = values.planetName;
+    this.spaceship = values.spaceship;
+    this.planet = values.planet;
+    this.biography = values.biography;
+    // this.data = values;
   }
 }

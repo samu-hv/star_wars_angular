@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { MainService } from 'src/app/core/services/main.service';
+import { TranslateService } from '@ngx-translate/core';
+import Smuggler from 'src/app/core/models/Smuggler';
 import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
+import { ApiConnService } from 'src/app/core/services/ApiConnection/api-conn.service';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
@@ -11,67 +13,50 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   styleUrls: ['./smuggler-details.component.scss']
 })
 export class SmugglerDetailsComponent implements OnInit {
-  smuggler!: any;
+  smuggler!: Smuggler;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private mainService: MainService,
     public navigation: NavigationService,
     private router: Router,
-    private breadcrumbService: BreadcrumbService
+    private breadcrumbService: BreadcrumbService,
+    private apiService: ApiConnService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
     this.getSmuggler();
+    console.log(this.smuggler);
     this.breadcrumbService.set('@Smuggler Details', 'Smuggler Details');
-    console.log(`${this.smuggler.id}/${this.smuggler.name}`);
-    console.log(this.smuggler.name.replace(/ /g, '%20'));
   }
 
   getSmuggler() {
     this.activatedRoute.paramMap.subscribe((params) => {
       const smugglerParams: any = params;
-
-      this.smuggler = this.mainService.findSmugglerByID(
-        smugglerParams.params.id
-      );
+      this.apiService
+        .getSmugglerById(smugglerParams.params.id)
+        .subscribe((smugglerDetails: Smuggler) => {
+          this.smuggler = smugglerDetails;
+        });
     });
   }
 
   translateSpecie(dataSpecie: string): string {
-    let specie: string = '';
-    if (dataSpecie == 'Human') {
-      specie = 'smugglerDetail.human';
-    } else {
-      return 'Wookiee';
-    }
-    return specie;
+    return dataSpecie === 'Human' ? 'smugglerDetail.human' : 'Wookiee';
   }
 
   translateGender(dataGender: string): string {
-    let gender: string = '';
-    if (dataGender == 'Male') {
-      gender = 'smugglerDetail.male';
-    } else {
-      return 'Female';
-    }
-    return gender;
+    return dataGender === 'Male' ? 'smugglerDetail.male' : 'Female';
   }
 
-  translateResume(character: string): string {
-    let resume: string = '';
-    if (character == 'Han Solo') {
-      resume = 'smugglerDetail.resume.hanSolo';
-    } else if (character == 'Chewbacca') {
-      resume = 'smugglerDetail.resume.chewbacca';
-    } else {
-      return 'smugglerDetail.resume.lando';
-    }
-    return resume;
+  translateResume() {
+    return this.translate.currentLang === 'en'
+      ? this.smuggler.biography.en
+      : this.smuggler.biography.es;
   }
 
   checkRouteUrl() {
-    const name = this.smuggler.name.replace(/ /g, '%20');
+    const name = this.smuggler.name.replace(/ /g, '-').toLowerCase();
     return this.router.url == `/${this.smuggler.id}/${name}`;
   }
 }

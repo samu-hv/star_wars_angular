@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MainService } from 'src/app/core/services/main.service';
+import Spaceship from 'src/app/core/models/Spaceship';
 import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
+import { ApiConnService } from 'src/app/core/services/ApiConnection/api-conn.service';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
@@ -10,11 +11,11 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   styleUrls: ['./spaceship.component.scss']
 })
 export class SpaceshipComponent implements OnInit {
-  spaceship!: any;
+  spaceship!: Spaceship;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private mainService: MainService,
+    private apiService: ApiConnService,
     private breadcrumbService: BreadcrumbService,
     public navigation: NavigationService
   ) {}
@@ -26,9 +27,11 @@ export class SpaceshipComponent implements OnInit {
   getSpaceship() {
     this.activatedRoute.paramMap.subscribe((params) => {
       const spaceshipParams: any = params;
-      this.spaceship = this.mainService.findSpaceshipByID(
-        spaceshipParams.params.spaceshipName
-      );
+      this.apiService
+        .getSpaceshipById(spaceshipParams.params.id)
+        .subscribe((spaceshipDetails: Spaceship) => {
+          this.spaceship = spaceshipDetails;
+        });
     });
   }
 }

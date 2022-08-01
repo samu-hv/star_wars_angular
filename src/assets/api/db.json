@@ -1,0 +1,110 @@
+{
+  "smugglers": [
+    {
+      "id": 1,
+      "name": "Han Solo",
+      "species": "Human",
+      "gender": "Male",
+      "height": 1.8,
+      "mass": 80,
+      "image": "../../../assets/images/hansolo.png",
+      "spaceship": [
+        {
+          "id": 1,
+          "name": "Millennium Falcon"
+        }
+      ],
+      "planet": {
+        "id": 1,
+        "name": "Corellia"
+      },
+      "biography": {
+        "en": "Han Solo was born on the planet Corellia during the waning years of the Galactic Republic. Sometime after he became famous, it would be rumored by an Snivvian bounty hunter that Han was actually a descendant of the Prince-Admiral Jonashe Solo. During his formative years, his father Ovan worked in the Corellian Engineering Corporation shipyards, building vessels such as YT-1300 light freighters until he was laid off",
+        "es": "Han Solo nació en el planeta Corellia durante los últimos años de la República Galáctica en algún momento alrededor del 32 ABY. Durante sus años formativos, su padre trabajó en los astilleros de la Corporación de Ingeniería Corelliana, construyendo buques como cargueros ligeros YT-1300 hasta que fue despedido"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Chewbacca",
+      "species": "Wookiee",
+      "gender": "Male",
+      "height": 2.3,
+      "mass": 112,
+      "image": "../../../assets/images/chewbacca.png",
+      "spaceship": [
+        {
+          "id": 2,
+          "name": "Eravana"
+        }
+      ],
+      "planet": {
+        "id": 2,
+        "name": "Kashyyyk"
+      },
+      "biography": {
+        "en": "Chewbacca, known affectionately to his friends as Chewie, was a Wookiee male warrior, smuggler, mechanic, pilot, and resistance fighter who fought in the Clone Wars, the Galactic Civil War, the Cold War, and the subsequent First Order-Resistance War. He hailed from the planet Kashyyyk and became a Wookiee military leader.",
+        "es": "Chewbacca, llamado afectuosamente Chewie por sus amigos, fue un guerrero wookiee, un contrabandista y un luchador de resistencia que peleó en las Guerras Clon, la Guerra Civil Galáctica y el Guerra Fría. Fue criado en el planeta Kashyyyk y se convirtió en un líder militar."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Lando Calrissian",
+      "species": "Human",
+      "gender": "Male",
+      "height": 1.78,
+      "mass": 79,
+      "image": "../../../assets/images/lando.png",
+      "spaceship": [
+        {
+          "id": 1,
+          "name": "Millennium Falcon"
+        }
+      ],
+      "planet": {
+        "id": 3,
+        "name": "Socorro"
+      },
+      "biography": {
+        "en": "Lando Calrissian was a Human male professional gambler, entrepreneur, smuggler, and general throughout various points in his life. Born on Socorro, he became a gambler and con man early in his life and acquired his own ship, the Millennium Falcon, in a game of sabacc with a man named Cix Trouvee.",
+        "es": "Lando Calrissian era un humano que en diferentes momentos de su vida fue un apostador profesional, empresario, contrabandista y general. Natal de Socorro, se convirtió en apostador y estafador en sus primeros años de vida, eventualmente ganando su propia nave, el Halcón Milenario, en un juego de sabacc a un hombre llamado Cix Trouvee"
+      }
+    }
+  ],
+  "planets": [
+    {
+      "id": 1,
+      "name": "Corellia",
+      "region": "Core Worlds",
+      "sector": "Corellian sector",
+      "image": "../../../assets/images/corellia.png"
+    },
+    {
+      "id": 2,
+      "name": "Kashyyyk",
+      "region": "Mid Rim Territories",
+      "sector": "Mytaranor sector",
+      "image": "../../../assets/images/kashyyyk.png"
+    },
+    {
+      "id": 3,
+      "name": "Socorro",
+      "region": "Core Worlds",
+      "sector": "Corellian sector",
+      "image": "../../../assets/images/socorro.jpg"
+    }
+  ],
+  "spaceships": [
+    {
+      "id": 1,
+      "name": "Millennium Falcon",
+      "manufacturer": "Corellian Engineering Corporation",
+      "image": "../../../assets/images/millennium.png"
+    },
+    {
+      "id": 2,
+      "name": "Eravana",
+      "manufacturer": "Corellian Engineering Corporation",
+      "image": "../../../assets/images/eravana.png"
+    }
+  ]
+}

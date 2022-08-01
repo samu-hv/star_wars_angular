@@ -18,12 +18,12 @@ const routes: Routes = [
     data: { breadcrumb: { alias: 'Smuggler Details' } },
     children: [
       {
-        path: 'planet/:planetName',
+        path: ':id/:planetName',
         component: PlanetComponent,
         data: { breadcrumb: { alias: 'Planet' } }
       },
       {
-        path: 'spaceship/:spaceshipName',
+        path: 'spaceship/:id/:spaceshipName',
         component: SpaceshipComponent,
         data: { breadcrumb: 'Spaceship' }
       }

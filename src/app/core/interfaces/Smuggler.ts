@@ -9,6 +9,18 @@ export default interface ISmuggler {
   height: number;
   mass: number;
   image: string;
-  spaceshipName: string;
-  planetName: string;
+  spaceship: [
+    {
+      id: number;
+      name: string;
+    }
+  ];
+  planet: {
+    id: number;
+    name: string;
+  };
+  biography: {
+    en: string;
+    es: string;
+  };
 }
