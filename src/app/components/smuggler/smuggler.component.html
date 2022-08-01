@@ -1,9 +1,12 @@
 <section class="container">
   <h1 class="heading-primary">{{ 'titles.smugglers' | translate }}</h1>
+  <div class="generate">
+    <button class="generate-btn">Create New Smuggler</button>
+  </div>
   <div class="row">
     <div
       class="card__outside"
-      [routerLink]="[smuggler.id, smuggler.name]"
+      [routerLink]="[smuggler.id, smuggler.name | lowercase | formatUrl]"
       *ngFor="let smuggler of smugglers"
     >
       <div class="card__middle">

@@ -22,6 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
+import { FormatUrlPipe } from './core/pipe/format-url.pipe';
+import { CreateFormSmugglerComponent } from './components/createForm/create-form-smuggler.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component
     SpaceshipComponent,
     HeaderComponent,
     FooterComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    FormatUrlPipe,
+    CreateFormSmugglerComponent
   ],
   imports: [
     BrowserModule,

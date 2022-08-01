@@ -22,31 +22,33 @@
               {{ translateGender(smuggler.gender) | translate }}
             </div>
             <div class="summary__details-item">
-              {{ 'smugglerDetail.heght' | translate }}: {{ smuggler.height }}
+              {{ 'smugglerDetail.heght' | translate }}:
+              {{ smuggler.height }}
             </div>
             <div class="summary__details-item">
               {{ 'smugglerDetail.mass' | translate }}: {{ smuggler.mass }}
             </div>
             <div class="summary__details-resume">
-              {{ translateResume(smuggler.name) | translate }}
+              {{ translateResume() }}
             </div>
           </div>
         </div>
         <div class="info">
           <div
             class="info__planet"
-            [routerLink]="['planet', smuggler.planetName]"
+            [routerLink]="[smuggler.planet.id, smuggler.planet.name]"
           >
             <div class="info__planet-name">
-              {{ smuggler.planetName }}
+              {{ smuggler.planet.name }}
             </div>
           </div>
           <div
             class="info__spaceship"
-            [routerLink]="['spaceship', smuggler.spaceshipName]"
+            [routerLink]="['spaceship', spaceship.id, spaceship.name]"
+            *ngFor="let spaceship of smuggler.spaceship"
           >
             <div class="info__spaceship-name">
-              {{ smuggler.spaceshipName }}
+              {{ spaceship.name }}
             </div>
           </div>
         </div>
