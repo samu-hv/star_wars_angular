@@ -1,0 +1,96 @@
+<section class="container">
+  <h1 class="heading-primary">Create a Smuggler</h1>
+  <div class="column">
+    <form class="form" [formGroup]="smugglerGroup" (ngSubmit)="submitForm()">
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Smuggler Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Specie</mat-label>
+          <input matInput formControlName="species" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Select the gender</mat-label>
+          <mat-select matNativeControl required formControlName="gender">
+            <mat-option>None</mat-option>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Height</mat-label>
+          <input type="number" matInput formControlName="height" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Mass</mat-label>
+          <input type="number" matInput formControlName="mass" />
+        </mat-form-field>
+      </div>
+      <div class="form__objects form__item">
+        <div class="form__select">
+          <mat-form-field appearance="fill">
+            <mat-label>Select a planet</mat-label>
+            <mat-select
+              matNativeControl
+              required
+              (selectionChange)="createPlanetGroup($event.value)"
+            >
+              <mat-option (click)="planetGroup = ''">None</mat-option>
+              <mat-option *ngFor="let planet of planets" [value]="planet">
+                {{ planet.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form__icon">
+          <span
+            class="form__icon-add material-icons"
+            [routerLink]="['../create-planet']"
+          >
+            add
+          </span>
+        </div>
+      </div>
+      <div class="form__objects form__item">
+        <div class="form__select">
+          <mat-form-field appearance="fill">
+            <mat-label>Select a spaceship</mat-label>
+            <mat-select
+              matNativeControl
+              required
+              (selectionChange)="createSpaceshipGroup($event.value)"
+            >
+              <mat-option (click)="spaceshipGroup = ''">None</mat-option>
+              <mat-option
+                *ngFor="let spaceship of spaceships"
+                [value]="spaceship"
+              >
+                {{ spaceship.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form__icon">
+          <span class="form__icon-add material-icons"> add </span>
+        </div>
+      </div>
+
+      <button
+        class="form-btn"
+        [disabled]="smugglerGroup.invalid || !planetGroup || !spaceshipGroup"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</section>

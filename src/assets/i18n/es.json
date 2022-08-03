@@ -23,7 +23,9 @@
     "Smuggler": "Contrabandistas",
     "Smuggler Details": "Detalles del contrabandistas",
     "Planet": "Planeta",
-    "Spaceship": "Nave Espacial"
+    "Spaceship": "Nave Espacial",
+    "FormSmuggler": "Formulario Contrabandistas",
+    "FormSpaceship": "Formulario Nave Espacial",
+    "FormPlanet": "Formulario Planeta"
   }
-  
 }

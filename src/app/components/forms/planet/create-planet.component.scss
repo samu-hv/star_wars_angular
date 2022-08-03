@@ -1,0 +1,61 @@
+@import '../../../styles/global.scss';
+
+.container {
+  padding: 4rem;
+  min-height: 75%;
+}
+
+.column {
+  margin: 0rem auto;
+  max-width: 35%;
+  min-height: 100rem;
+  padding: 1rem;
+
+  @include respond(phone) {
+    max-width: 90%;
+  }
+
+  &::before {
+    content: '';
+    background-image: url(../../../../assets/images/form-bg-2.jpg);
+    max-width: 35%;
+    min-height: 100rem;
+    background-size: cover;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.6;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.form {
+  text-align: center;
+  margin-top: 15rem;
+
+  &__item {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  &__objects {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-btn {
+    position: relative;
+    margin-top: 5rem;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    @include font-source-sans(1.8rem, false, 500, 1px);
+    @include transition(all, 2s);
+
+    &:hover {
+      @include translate(0, -0.6rem);
+    }
+  }
+}

@@ -1,7 +1,9 @@
 <section class="container">
   <h1 class="heading-primary">{{ 'titles.smugglers' | translate }}</h1>
   <div class="generate">
-    <button class="generate-btn">Create New Smuggler</button>
+    <button [routerLink]="'create-smuggler'" class="generate-btn">
+      Create New Smuggler
+    </button>
   </div>
   <div class="row">
     <div

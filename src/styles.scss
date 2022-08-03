@@ -50,3 +50,11 @@ body {
 .xng-breadcrumb-list {
   justify-content: center;
 }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(240, 240, 240, 0.87) !important;
+}
+
+.mat-form-field {
+  width: 50%;
+}

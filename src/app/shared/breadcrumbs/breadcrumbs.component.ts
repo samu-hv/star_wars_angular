@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
-import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
   selector: 'app-breadcrumbs',
