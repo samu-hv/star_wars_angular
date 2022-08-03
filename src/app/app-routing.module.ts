@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatePlanetComponent } from './components/forms/planet/create-planet.component';
 import { CreateSmugglerComponent } from './components/forms/smuggler/create-smuggler.component';
+import { CreateSpaceshipComponent } from './components/forms/spaceship/create-spaceship.component';
 import { PlanetComponent } from './components/planet/planet.component';
 import { SmugglerComponent } from './components/smuggler/smuggler.component';
 import { SmugglerDetailsComponent } from './components/smugglerDetails/smuggler-details.component';
@@ -40,6 +41,11 @@ const routes: Routes = [
     path: 'create-planet',
     component: CreatePlanetComponent,
     data: { breadcrumb: { alias: 'Form Planet' } }
+  },
+  {
+    path: 'create-spaceship',
+    component: CreateSpaceshipComponent,
+    data: { breadcrumb: { alias: 'Form Spaceship' } }
   }
 ];
 

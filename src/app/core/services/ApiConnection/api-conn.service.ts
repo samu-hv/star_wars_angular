@@ -50,9 +50,21 @@ export class ApiConnService {
       .pipe(catchError(this.handleError));
   }
 
-  postSmugglers(smuggler: FormData): Observable<Spaceship> {
+  postSmugglers(smuggler: FormData): Observable<Smuggler> {
     return this.http
-      .post<Spaceship>(this.apiUrl + `/smugglers`, smuggler)
+      .post<Smuggler>(this.apiUrl + `/smugglers`, smuggler)
+      .pipe(catchError(this.handleError));
+  }
+
+  postPlanets(planet: FormData): Observable<Planet> {
+    return this.http
+      .post<Planet>(this.apiUrl + `/planets`, planet)
+      .pipe(catchError(this.handleError));
+  }
+
+  postSpaceships(spaceship: FormData): Observable<Spaceship> {
+    return this.http
+      .post<Spaceship>(this.apiUrl + `/spaceships`, spaceship)
       .pipe(catchError(this.handleError));
   }
 

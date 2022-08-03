@@ -52,13 +52,9 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="form__icon">
-          <span
-            class="form__icon-add material-icons"
-            [routerLink]="['../create-planet']"
-          >
-            add
-          </span>
+        <div class="form__add" [routerLink]="['../create-planet']">
+          <span>Add a new planet</span>
+          <span class="form__add-icon material-icons"> add </span>
         </div>
       </div>
       <div class="form__objects form__item">
@@ -80,8 +76,9 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="form__icon">
-          <span class="form__icon-add material-icons"> add </span>
+        <div class="form__add" [routerLink]="['../create-spaceship']">
+          <span>Add a new spaceship</span>
+          <span class="form__add-icon material-icons"> add </span>
         </div>
       </div>
 

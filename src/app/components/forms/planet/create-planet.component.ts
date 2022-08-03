@@ -28,7 +28,7 @@ export class CreatePlanetComponent implements OnInit {
   }
 
   postPlanet(planetData: FormData) {
-    this.apiService.postSmugglers(planetData).subscribe((planet) => planet);
+    this.apiService.postPlanets(planetData).subscribe((planet) => planet);
   }
 
   submitForm() {

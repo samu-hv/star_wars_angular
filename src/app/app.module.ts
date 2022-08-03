@@ -31,6 +31,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CreatePlanetComponent } from './components/forms/planet/create-planet.component';
+import { CreateSpaceshipComponent } from './components/forms/spaceship/create-spaceship.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CreatePlanetComponent } from './components/forms/planet/create-planet.c
     BreadcrumbsComponent,
     FormatUrlPipe,
     CreateSmugglerComponent,
-    CreatePlanetComponent
+    CreatePlanetComponent,
+    CreateSpaceshipComponent
   ],
   imports: [
     BrowserModule,
