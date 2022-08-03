@@ -23,6 +23,9 @@
     "Smuggler": "Smuggler",
     "Smuggler Details": "Smuggler Details",
     "Planet": "Planet",
-    "Spaceship": "Spaceship"
+    "Spaceship": "Spaceship",
+    "Form Smuggler": "Form Smuggler",
+    "Form Spaceship": "Form Spaceship",
+    "Form Planet": "Form Planet"
   }
 }

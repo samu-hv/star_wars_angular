@@ -23,12 +23,12 @@
       $color-secondary,
       $color-primary-light
     );
-    @include font-source-sans(1.8rem, $color-white, 500, 1px);
     clip-path: polygon(7% 0, 93% 0, 100% 50%, 93% 100%, 7% 100%, 0 50%);
-    transition: all 2s;
+    @include font-source-sans(1.8rem, $color-white, 500, 1px);
+    @include transition(all, 2s);
 
     &:hover {
-      transform: translateY(-0.6rem);
+      @include translate(0, -0.6rem);
     }
   }
 }

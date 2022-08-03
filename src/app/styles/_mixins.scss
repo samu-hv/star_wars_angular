@@ -28,6 +28,33 @@
   border-radius: 2rem;
 }
 
+@mixin transition($x...) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+// Rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// Translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == phone-small {
     @media only screen and (max-width: 25em) {

@@ -1,0 +1,26 @@
+<section class="container">
+  <h1 class="heading-primary">Create Planet</h1>
+  <div class="column">
+    <form class="form" [formGroup]="planetGroup" (ngSubmit)="submitForm()">
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Planet Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Region</mat-label>
+          <input matInput formControlName="region" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Sector</mat-label>
+          <input type="number" matInput formControlName="Sector" />
+        </mat-form-field>
+      </div>
+      <button class="form-btn" [disabled]="planetGroup.invalid">Submit</button>
+    </form>
+  </div>
+</section>

@@ -8,12 +8,10 @@
       "height": 1.8,
       "mass": 80,
       "image": "../../../assets/images/hansolo.png",
-      "spaceship": [
-        {
-          "id": 1,
-          "name": "Millennium Falcon"
-        }
-      ],
+      "spaceship": {
+        "id": 1,
+        "name": "Millennium Falcon"
+      },
       "planet": {
         "id": 1,
         "name": "Corellia"
@@ -31,12 +29,10 @@
       "height": 2.3,
       "mass": 112,
       "image": "../../../assets/images/chewbacca.png",
-      "spaceship": [
-        {
-          "id": 2,
-          "name": "Eravana"
-        }
-      ],
+      "spaceship": {
+        "id": 2,
+        "name": "Eravana"
+      },
       "planet": {
         "id": 2,
         "name": "Kashyyyk"
@@ -54,12 +50,10 @@
       "height": 1.78,
       "mass": 79,
       "image": "../../../assets/images/lando.png",
-      "spaceship": [
-        {
-          "id": 1,
-          "name": "Millennium Falcon"
-        }
-      ],
+      "spaceship": {
+        "id": 1,
+        "name": "Millennium Falcon"
+      },
       "planet": {
         "id": 3,
         "name": "Socorro"
