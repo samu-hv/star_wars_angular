@@ -1,0 +1,22 @@
+<section class="container">
+  <h1 class="heading-primary">Create Spaceship</h1>
+  <div class="column">
+    <form class="form" [formGroup]="spaceshipGroup" (ngSubmit)="submitForm()">
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>Spaceship Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field appearance="fill">
+          <mat-label>manufacturer</mat-label>
+          <input matInput formControlName="manufacturer" />
+        </mat-form-field>
+      </div>
+      <button class="form-btn" [disabled]="spaceshipGroup.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
