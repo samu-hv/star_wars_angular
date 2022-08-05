@@ -36,56 +36,17 @@
           <input type="number" matInput formControlName="mass" />
         </mat-form-field>
       </div>
-      <div class="form__objects form__item">
-        <div class="form__select">
-          <mat-form-field appearance="fill">
-            <mat-label>Select a planet</mat-label>
-            <mat-select
-              matNativeControl
-              required
-              (selectionChange)="createPlanetGroup($event.value)"
-            >
-              <mat-option (click)="planetGroup = ''">None</mat-option>
-              <mat-option *ngFor="let planet of planets" [value]="planet">
-                {{ planet.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="form__add" [routerLink]="['../create-planet']">
-          <span>Add a new planet</span>
-          <span class="form__add-icon material-icons"> add </span>
-        </div>
-      </div>
-      <div class="form__objects form__item">
-        <div class="form__select">
-          <mat-form-field appearance="fill">
-            <mat-label>Select a spaceship</mat-label>
-            <mat-select
-              matNativeControl
-              required
-              (selectionChange)="createSpaceshipGroup($event.value)"
-            >
-              <mat-option (click)="spaceshipGroup = ''">None</mat-option>
-              <mat-option
-                *ngFor="let spaceship of spaceships"
-                [value]="spaceship"
-              >
-                {{ spaceship.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="form__add" [routerLink]="['../create-spaceship']">
-          <span>Add a new spaceship</span>
-          <span class="form__add-icon material-icons"> add </span>
-        </div>
-      </div>
 
-      <button
-        class="form-btn"
-        [disabled]="smugglerGroup.invalid || !planetGroup || !spaceshipGroup"
-      >
+      <!-- <app-form-smuggler-selects
+        (planetgroup)="planetSelected($event)"
+      ></app-form-smuggler-selects> -->
+
+      <app-form-smuggler-selects
+        (newPlanetEvent)="planetSelected($event)"
+        (newSpaceshipEvent)="spaceshipSelected($event)"
+      ></app-form-smuggler-selects>
+
+      <button class="form-btn" [disabled]="smugglerGroup.invalid">
         Submit
       </button>
     </form>
