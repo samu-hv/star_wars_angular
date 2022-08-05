@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import Planet from 'src/app/core/models/Planet';
-import Smuggler from 'src/app/core/models/Smuggler';
-import Spaceship from 'src/app/core/models/Spaceship';
 import { ApiConnService } from 'src/app/core/services/ApiConnection/api-conn.service';
 import { BreadcrumbService } from 'xng-breadcrumb';
 @Component({
@@ -13,11 +10,18 @@ import { BreadcrumbService } from 'xng-breadcrumb';
 })
 export class CreateSmugglerComponent implements OnInit {
   smugglerGroup!: FormGroup;
-  planets!: Array<Planet>;
-  spaceships?: Array<Spaceship>;
-  planetGroup?: any;
-  spaceshipGroup!: any;
-  testingParent!: any;
+  planet: any;
+  spaceship: any;
+
+  planetSelected(value: any) {
+    this.planet = value;
+    console.log(this.planet);
+  }
+
+  spaceshipSelected(value: any) {
+    this.spaceship = value;
+    console.log(this.spaceship);
+  }
 
   constructor(
     private router: Router,
@@ -35,23 +39,7 @@ export class CreateSmugglerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.getPlanets().subscribe((planet) => {
-      this.planets = planet;
-    });
-    this.apiService.getSpaceships().subscribe((spaceship) => {
-      this.spaceships = spaceship;
-    });
     this.breadcrumbService.set('@Form Smuggler', 'Form Smuggler');
-  }
-
-  createPlanetGroup(planet: Planet) {
-    this.planetGroup = { planet: { id: planet.id, name: planet.name } };
-  }
-
-  createSpaceshipGroup(spaceship: Planet) {
-    this.spaceshipGroup = {
-      spaceship: { id: spaceship.id, name: spaceship.name }
-    };
   }
 
   postSmuggler(smugglerData: FormData) {
@@ -62,8 +50,8 @@ export class CreateSmugglerComponent implements OnInit {
 
   submitForm() {
     const smuggler = this.smugglerGroup.value;
-    const planet = this.planetGroup;
-    const spaceship = this.spaceshipGroup;
+    const planet = this.planet;
+    const spaceship = this.spaceship;
     const smugglerMerged = { ...smuggler, ...planet, ...spaceship };
     this.postSmuggler(smugglerMerged);
   }

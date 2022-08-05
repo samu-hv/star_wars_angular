@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CreatePlanetComponent } from './components/forms/planet/create-planet.component';
 import { CreateSpaceshipComponent } from './components/forms/spaceship/create-spaceship.component';
+import { FormSmugglerSelectsComponent } from './components/forms/smuggler/selects/form-smuggler-selects.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CreateSpaceshipComponent } from './components/forms/spaceship/create-sp
     FormatUrlPipe,
     CreateSmugglerComponent,
     CreatePlanetComponent,
-    CreateSpaceshipComponent
+    CreateSpaceshipComponent,
+    FormSmugglerSelectsComponent
   ],
   imports: [
     BrowserModule,
